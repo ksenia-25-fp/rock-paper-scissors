@@ -10,3 +10,8 @@ if (randomNum < 0.33) {
     return "scissors";
 }
 }
+
+function getHumanChoice (){
+let choice = prompt ("Enter rock, paper or scissors");
+return choice;
+}
