@@ -1,8 +1,12 @@
 function getComputerChoice (){
 
-//use Math.random to get the value and save it to a variable called randomNum
+let randomNum = Math.random();
 
-// if randomNum is less then 0.33 return "rock"
-// else if randomNum less then 0.66 return "paper"
-// else return "scissors"
+if (randomNum < 0.33) {
+    return "rock";
+} else if (randomNum < 0.66){
+    return "paper";
+} else {
+    return "scissors";
+}
 }
