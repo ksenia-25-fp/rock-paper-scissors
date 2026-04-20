@@ -8,7 +8,7 @@ This project is a logic-based game where a human player competes against a compu
 ## How to Play
 1. Clone this repository to your local machine.
 2. Open `index.html` in any modern web browser.
-3. Open the Browser Console (F12 or Right-Click -> Inspect -> Console).
+3. Open the Browser Console (F12 / cmd+alt+I / Right-Click -> Inspect -> Console).
 4. Follow the prompts to enter your choice (rock, paper, or scissors).
 5. Check the console for round-by-round results and the final score.
 
@@ -16,7 +16,7 @@ This project is a logic-based game where a human player competes against a compu
 * **Case-Insensitive Input:** Player input is automatically normalized to lowercase to ensure reliable comparisons.
 * **Automated Logic:** Computer moves are generated using `Math.random()` to ensure unpredictable gameplay.
 * **Encapsulated Code:** Game logic and score variables are contained within a main `playGame()` function to manage scope effectively.
-* **Loop Integration:** A `for` loop handles the 5-round structure, ensuring clean code without duplication.
+* **Loop Integration:** A `for` loop handles the 5-round structure, ensuring DRY principle.
 
 ## Tech Stack
 * **JavaScript** (Logic, Loops, Conditionals)
@@ -30,7 +30,3 @@ Through this project, I have practiced and implemented the following concepts:
 * Using **Loops** to automate repetitive tasks and manage game flow.
 * **Input Normalization** to handle varied user input formats.
 * Functional programming basics, including function declarations and passing **arguments**.
-
----
-
-Этот вариант выглядит максимально «чисто» и официально. Теперь твой репозиторий готов к проверке!
