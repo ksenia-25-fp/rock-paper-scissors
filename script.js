@@ -10,44 +10,43 @@ function getComputerChoice () {
     }
 }
 
-function getHumanChoice () {
-    let choice = prompt ("Enter rock, paper or scissors");
-    choice = choice.toLowerCase();
-    return choice;
-}
-
 function playGame () {
     let humanScore = 0;
     let computerScore = 0;
 
+    const buttonRock = document.querySelector ("#rock");
+    buttonRock.addEventListener('click', () => playRound("rock", getComputerChoice()));
+
+    const buttonPaper = document.querySelector ("#paper");
+    buttonPaper.addEventListener('click', () => playRound("paper", getComputerChoice()));
+
+    const buttonScissors = document.querySelector ("#scissors");
+    buttonScissors.addEventListener('click', () => playRound("scissors", getComputerChoice()));
+
+    const resultDiv = document.querySelector("#result");
+    const score = document.querySelector("#score");
+
+
     function playRound (humanChoice, computerChoice) {
         if (humanChoice === computerChoice) {
-            console.log ("A draw. You’re not so easy to beat!")
+            resultDiv.textContent = "A draw. You’re not so easy to beat!";
         } else if ((humanChoice === "rock" && computerChoice === "scissors") || 
         (humanChoice === "paper" && computerChoice === "rock") || 
         (humanChoice === "scissors" && computerChoice === "paper")) {
-            console.log ("You win!")
+            resultDiv.textContent = "You win!";
             humanScore ++; 
         } else {
-            console.log ("You lose! Hahahaha")
+            resultDiv.textContent = "You lose! Hahahaha";
             computerScore ++;
         } 
-        console.log (humanScore, computerScore);
-    }
 
-    for (let i = 0; i < 5; i++) {
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
+        score.textContent = `Score: Player ${humanScore} - ${computerScore} Computer`;
 
-        playRound(humanSelection, computerSelection);
-    }
-
-    if (humanScore > computerScore) {
-        alert ("You are the ultimate champion!")
-    } else if (computerScore > humanScore) {
-        alert ("Machine uprising is here. You lost the game.")
-    } else {
-        alert ("A total draw!")
+        if (humanScore === 5) {
+            alert ("You are the ultimate champion!")
+        } else if (computerScore === 5) {
+            alert ("Machine uprising is here. You lost the game.")
+        }
     }
 }
 
